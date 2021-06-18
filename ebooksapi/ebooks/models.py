@@ -14,6 +14,7 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at =models.DateTimeField(auto_now = True)
     review_author = models.CharField(max_length=8, blank=True, null=True)
+    review = models.CharField(max_length = 250, blank =True)
     rating = models.PositiveIntegerField(validators = [MinValueValidator(1),
                                                        MaxValueValidator(5)])
 
@@ -22,3 +23,5 @@ class Review(models.Model):
                             related_name='reviews')
     def __str__(self):
         return str(self.rating)
+
+
