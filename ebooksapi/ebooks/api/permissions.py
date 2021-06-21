@@ -13,3 +13,4 @@ class IsReviewAuthorOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
         return obj.review_author == request.user
+

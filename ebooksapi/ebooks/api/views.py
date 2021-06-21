@@ -13,7 +13,7 @@ class EbookListCreateAPIView(generics.ListCreateAPIView):
     queryset = Ebook.objects.all().order_by("-id")                                          #ordering for pagination
     serializer_class = EbookSerializer
     permission_classes = [IsAdminUserOrReadOnly]
-    pagination_class = SmallSetPagination
+    # pagination_class = SmallSetPagination
 
 class EbookDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Ebook.objects.all()
